@@ -1,12 +1,9 @@
 defmodule ListFilter do
-  def call(list) do
-    countOdds(list)
-  end
+  def call(list), do: countOdds(list)
+
 
   defp countOdds(list) do
-    numbers = filterNumbers(list)
-
-    Enum.count(numbers, fn x -> rem(x, 2) != 0 end)
+    Enum.count(filterNumbers(list), fn x -> rem(x, 2) != 0 end)
   end
 
   defp filterNumbers(list) do
